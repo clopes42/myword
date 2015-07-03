@@ -1,0 +1,30 @@
+//  List unstyled
+%list-unstyled {
+    list-style: none;
+    padding-left: 0;
+    margin: 0 auto;
+}
+
+//  Inline block with middle vertical align
+%inlineBlockVerticallyCentered {
+    display: inline-block;
+    vertical-align: middle;
+}
+
+//  Vertical align middle
+%verticalAlignMiddlePseudoElement {
+    content: '';
+    display: inline-block;
+    vertical-align: middle;
+    height: 100%;
+}
+%verticalAlignMiddle {
+    &:before {
+        @extend %verticalAlignMiddlePseudoElement;
+    }
+}
+%verticalAlignMiddleAfter {
+    &:after {
+        @extend %verticalAlignMiddlePseudoElement;
+    }
+}

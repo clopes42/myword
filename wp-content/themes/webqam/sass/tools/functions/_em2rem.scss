@@ -1,0 +1,10 @@
+//  Converts em value to rem
+//
+//  @param $emValue
+//  @param $context
+//
+//  @todo À tester
+//
+@function em2rem($emValue, $context: $base-font-size) {
+    @return px2rem(em2px($emValue, $context), $base-font-size);
+}

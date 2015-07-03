@@ -1,0 +1,18 @@
+//  Prepend Mixin
+//
+//  @param {string}
+//
+@mixin prepend($selector) {
+    $isError: false;
+
+    @if type-of($selector) != string{
+        $isError: true;
+        @warn '`#{$feature} must be a string.';
+    }
+
+    @if ($isError == false) {
+        @at-root #{$selector} & {
+            @content;
+        }
+    }
+}

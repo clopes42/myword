@@ -1,0 +1,11 @@
+// Selection mixin
+//
+// @author Benjamin Gondy <bgondy@webqam.fr>
+@mixin selection() {
+    ::-moz-selection {
+        @content;
+    }
+    ::selection {
+        @content;
+    }
+}

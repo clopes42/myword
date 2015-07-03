@@ -1,0 +1,111 @@
+// -----------------------------------------------------------------------------
+// Modernizr mixin
+// -----------------------------------------------------------------------------
+
+// -----------------------------------------------------------------------------
+// Modernizr
+// -----------------------------------------------------------------------------
+
+//
+// Prints classes for supported or unsupported features
+// ---
+// @access private
+// ---
+// @param {Bool}      $supports   - Whether to check for supported features or not
+// @param {ArgList}   $features   - List of features
+// ---
+// @throws `$feature` is not a `string` for `modernizr`
+// 
+@mixin modernizr($supports, $features...) {
+    $everything-okay: true;
+
+    // Use the 'no-' prefix if checking for unsuported features (e.g. `.no-translate3d`)
+    $prefix: if($supports, '', 'no-');
+
+    // Features selector
+    // a) create a string if checking for supported features. We'll concatenate class names later on (e.g. `.translate3d.opacity selector`)
+    // b) create a list if checking for unsuported features. We'll append the class names later on (e.g. `.no-js selector, .no-translate3d selector`)
+    $selector: if($supports, '', unquote('.no-js'));
+
+    // The placeholder (e.g. `%yep-translate3d` or `%nope-opacity`)
+    $placeholder: if($supports, '%yep', '%nope');
+
+    // Generate placeholder and selectors
+    @each $feature in $features {
+        // Making sure $feature is a string
+        @if type-of($feature) != string {
+            $everything-okay: false;
+            @warn '`#{$feature} is not a string for `modernizr`';
+        } @else {
+            // Add feature name to the placeholder string (e.g. '%yep' + '-' + 'translate3d' or '%nope' + '-' + 'translate3d')
+            $placeholder: $placeholder + '-' + $feature;
+
+            // Define the new selector string (e.g. `.translate3d` or `.no-translate3d`)
+            $new-selector: #{'.' + $prefix + $feature};
+
+            // Append the new selector
+            // a) to the string if yep (e.g. `.translate3d.opacity`)
+            // b) to the list if nope (e.g. `.no-translate3d, .no-opacity`)
+            $selector: if($supports, $selector + $new-selector, append($selector, $new-selector, comma));
+        }
+    }
+
+    @if $everything-okay == true {
+        // Define the placholder and print @content
+        #{$placeholder} & {
+            @content;
+        }
+
+        // Define feature selector(s) and extend the placeholder
+        @at-root #{$selector} {
+            @extend #{$placeholder};
+        }
+
+    }
+}
+
+// -----------------------------------------------------------------------------
+// Yep mixin
+// -----------------------------------------------------------------------------
+
+
+// Prints classes for supported features
+// ---
+// @requires modernizr
+// ---
+// @access public
+// ---
+// @param {ArgList} $features   - List of features
+// ---
+// @example scss
+// .my-selector { @include yep(opacity, csstransforms) { // ... } }
+// 
+
+@mixin yep($features...) {
+    @include modernizr(true, $features...) {
+        @content;
+    }
+}
+
+// -----------------------------------------------------------------------------
+// Nope mixin
+// -----------------------------------------------------------------------------
+
+//
+// Nope “alias”
+// Prints classes for unsupported features and lack of JS
+// ---
+// @requires modernizr
+// ---
+// @access public
+// ---
+// @param {ArgList} $features - List of features
+// ---
+// @example scss
+// .my-selector { @include nope(opacity, csstransforms) { // ... } }
+// 
+@mixin nope($features...) {
+    @include modernizr(false, $features...) {
+        @content;
+    }
+}

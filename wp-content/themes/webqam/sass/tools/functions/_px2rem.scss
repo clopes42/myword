@@ -1,0 +1,8 @@
+//  Converts px value to rem
+//
+//  @param $pxValue
+//  @param $context
+//
+@function px2rem($pxValue, $context: $base-font-size) {
+    @return ((parseInt($pxValue)*1px) / $context) * 1rem;
+}

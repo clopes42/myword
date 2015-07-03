@@ -1,0 +1,128 @@
+//
+// Arrow
+//
+// @param $color
+// @param $width
+// @param $height
+// @param $position
+// @param $progressValue
+// @param $progressName
+// @param $centerOrigin
+// @param $arrowHeadPosition
+// @param $borderWidth
+// @param $borderColor
+// @param $inset
+//
+// @author Benjamin Gondy <bgondy@webqam.fr>
+@mixin arrow($color, $width, $height, $position, $progressValue: 50%, $progressName: null, $centerOrigin: true, $arrowHeadPosition: center, $borderWidth: null, $borderColor: null, $inset: false) {
+    //  Le param arrowHeadPosition n'est pas utilisé (à développer)
+    position: relative;
+
+    //  Initialize position property name and orientation
+    $positionPropertyName: null;
+    $orientation: vertical;
+    @if $position == top {
+        $positionPropertyName: bottom;
+        $orientation: horizontal;
+    } @else if $position == right {
+        $positionPropertyName: left;
+    } @else if $position == bottom {
+        $positionPropertyName: top;
+        $orientation: horizontal;
+    } @else if $position == left {
+        $positionPropertyName: right;
+    }
+
+    //  Initialize progress property if undefined
+    $progressPropertyName: null;
+    @if $progressName != null {
+        $progressPropertyName: $progressName
+    } @else if $orientation == horizontal {
+        $progressPropertyName: left;
+    } @else {
+        $progressPropertyName: top;
+    }
+
+    $beforeSelector: null;
+    @if $borderWidth != null {
+        $beforeSelector: ", &:before";
+    }
+
+    //  Global properties
+    &:after #{$beforeSelector} {
+        position: absolute;
+        $startPosition: null;
+        @if $inset {
+            $startPosition: 0%;
+        } @else {
+            $startPosition: 100%
+        }
+        #{$positionPropertyName}: $startPosition;
+        #{$progressPropertyName}: $progressValue;
+        content: " ";
+        border: solid transparent;
+        width: 0;
+        height: 0;
+        pointer-events: none;
+    }
+
+    //  Custom properties
+    &:after {
+        border-#{$positionPropertyName}-color: $color;
+        $borderWidthTopBottom: null;
+        $borderWidthLeftRight: null;
+
+        @if ($orientation == horizontal) {
+            $borderWidthTopBottom: $height;
+            $borderWidthLeftRight: $width/2;
+        } @else {
+            $borderWidthTopBottom: $height/2;
+            $borderWidthLeftRight: $width;
+        }
+
+        border-width: $borderWidthTopBottom $borderWidthLeftRight;
+        @if $centerOrigin {
+            $originOffsetValue: null;
+            @if ($orientation == vertical) {
+                $originOffsetValue: $height;
+            } @else {
+                $originOffsetValue: $width;
+            }
+
+            margin-#{$progressPropertyName}: -$originOffsetValue / 2;
+        }
+    }
+
+    @if $borderWidth != null {
+        &:before {
+            border-#{$positionPropertyName}-color: $borderColor;
+            $borderWidthTopBottom: null;
+            $borderWidthLeftRight: null;
+            $bHeight: $height + $borderWidth;
+            $bWidth: $width + $borderWidth;
+
+            @if ($orientation == horizontal) {
+                $borderWidthTopBottom: $bHeight;
+                $borderWidthLeftRight: $bWidth/2;
+            } @else {
+                $borderWidthTopBottom: $bHeight/2;
+                $borderWidthLeftRight: $bWidth;
+            }
+
+            border-width: $borderWidthTopBottom $borderWidthLeftRight;
+
+            @if $centerOrigin {
+                $originOffsetValue: null;
+                @if ($orientation == vertical) {
+                    $originOffsetValue: $bHeight;
+                } @else {
+                    $originOffsetValue: $bWidth;
+                }
+
+                margin-#{$positionPropertyName}: $borderWidth;
+                margin-#{$progressPropertyName}: -$originOffsetValue / 2;
+            }
+        }
+    }
+
+}

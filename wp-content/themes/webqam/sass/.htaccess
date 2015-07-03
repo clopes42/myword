@@ -1,0 +1,2 @@
+# Deny access to sass files
+Deny from all

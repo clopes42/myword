@@ -1,0 +1,8 @@
+//  Converts em values to px
+//
+//  @param $emValue
+//  @param $context
+//
+@function em2px($emValue, $context: $base-font-size) {
+    @return $emValue * $context * 1px;
+}

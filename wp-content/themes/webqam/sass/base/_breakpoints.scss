@@ -1,0 +1,24 @@
+//  Breakpoints
+
+//  320px
+$breakpoint-xxs: 20em;
+//  560px
+$breakpoint-xs: 35em;
+// 768px
+$breakpoint-s: 48em;
+// 992px
+$breakpoint-m: 62em;
+// 1200px
+$breakpoint-l: 75em;
+// 1344px
+$breakpoint-xl: 84em;
+
+//  Rem breakpoints
+$breakpoint-rem-xxs: em2rem($breakpoint-xxs);
+$breakpoint-rem-xs: em2rem($breakpoint-xs);
+$breakpoint-rem-s: em2rem($breakpoint-s);
+$breakpoint-rem-m: em2rem($breakpoint-m);
+$breakpoint-rem-l: em2rem($breakpoint-l);
+$breakpoint-rem-xl: em2rem($breakpoint-xl);
+
+$breakpoint-fullHD: 1920px;
