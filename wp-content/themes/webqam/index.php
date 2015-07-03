@@ -1,7 +1,15 @@
 <?php get_header(); ?>
 
+
+test
 <div id="main-content" class="main-content">
 
+    
+    <section class=" banner banner1">
+        <div class="bg-banner1"></div>
+    </section>
+    
+    
     <section class="primary" class="content-area">
         <div class="site-content" role="main">
 
@@ -27,10 +35,33 @@
 
         </div>
     </section>
+    
+    <section class="banner banner2" id="banner2">
+        <div class="bg-banner2"></div>
+    </section>
+    
+    
+    <section id="images" class="wrapper">
+      <p class="images-byline">Or better yet, a realistic example of showcasing some design work.</p>
+      <p class="images-byline-2">Really, anything is possible &hellip;</p>
+      <img id="mediumHomepage" class="raw-page" src="http://davegamache.com/parallax/img/oversized-raw-homepage.jpg">
+      <div class="iphone">
+        <img class="iphone-frame" src="http://davegamache.com/parallax/img/iphoneframe.png">
+        <div class="iphone-viewport">
+          <img id="medium-profile-iphone" class="iphone-content" src="http://davegamache.com/parallax/img/medium-profile-iphone-fullsize.jpg">
+          <img id="davegamache-dot-com" class="iphone-content" src="http://davegamache.com/parallax/img/davegamache-rotated.jpg">
+        </div>
+      </div>
+    </section>
+    
+    
+    <section class="secondary">
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vero, adipisci?</p>
+    </section>
 
     <?php get_sidebar( 'content' ); ?>
 
 </div>
-
+test
 <?php
 get_footer();

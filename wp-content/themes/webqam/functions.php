@@ -229,6 +229,7 @@ class Webqam extends Singleton {
         wp_register_script('modernizr', "$this->tplDir/js/vendor/modernizr-2.8.3.min.js", array(), null);
         wp_register_script('respond', "$this->tplDir/js/vendor/respond.min.js", array(), null);
         wp_register_script('plugins', "$this->tplDir/js/min/plugins.min.js", array(), $this->cacheVersion, true);
+        wp_register_script('picasso', "$this->tplDir/js/picasso.js", array("jquery"), $this->cacheVersion, true);
         wp_register_script('scripts', "$this->tplDir/js/scripts.js", array("jquery"), $this->cacheVersion, true);
 
         wp_deregister_script('jquery');
@@ -252,6 +253,7 @@ class Webqam extends Singleton {
         wp_enqueue_script('jquery');
         wp_enqueue_script('modernizr');
         wp_enqueue_script('respond');
+        wp_enqueue_script('picasso');
         wp_enqueue_script('scripts');
 
         return $this;

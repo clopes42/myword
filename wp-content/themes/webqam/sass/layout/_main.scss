@@ -1,0 +1,107 @@
+body, html,
+#page,
+.main-content {
+    height: 100%;
+}
+
+.banner {
+    position: relative;
+    height: 450px;
+    overflow: hidden;
+}
+
+.bg-banner1,
+.bg-banner2 {
+    position: absolute;
+    height: 200%;
+    width: 100%;
+    background-size: 100% auto;
+    background-color: transparent;
+    background-position: center top;
+    background-repeat: no-repeat;
+}
+.bg-banner1 {
+    top: 0;
+    background-image: url(../images/pays1.jpg);
+}
+
+.bg-banner2 {
+    top: 0;
+    background-image: url(../images/pays2.jpg);
+}
+
+
+
+#images {
+    height: 100%;
+    position: fixed;
+    top: 100%;
+    width: 100%;
+}
+.images-byline {
+    color: black;
+    left: 10%;
+    max-width: 22%;
+    opacity: 0;
+    position: fixed;
+    top: 63%;
+}
+.images-byline-2 {
+    color: black;
+    left: 25%;
+    opacity: 0;
+    position: fixed;
+    text-align: center;
+    top: 93%;
+    width: 50%;
+}
+#mediumHomepage {
+    right: 5%;
+    top: 100%;
+}
+.raw-page {
+    background-clip: padding-box;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    border-radius: 6px;
+    box-shadow: 0 0 1px rgba(255, 255, 255, 0.3) inset;
+    position: fixed;
+    width: 45%;
+}
+.iphone {
+    position: fixed;
+    right: 40%;
+    top: 102%;
+    width: 16%;
+}
+
+.iphone-frame {
+    background-size: 100% auto;
+    height: auto;
+    position: relative;
+    width: 100%;
+    z-index: 2;
+}
+
+.iphone-viewport {
+    background-color: #000;
+    height: 69.5%;
+    left: 8%;
+    overflow: hidden;
+    position: absolute;
+    top: 14%;
+    width: 83.5%;
+}
+
+#medium-profile-iphone {
+    z-index: 2;
+}
+.iphone-content {
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
+}
+
+p {
+    color: #000;
+}

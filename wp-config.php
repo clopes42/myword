@@ -69,9 +69,9 @@ define('WP_CONTENT_DIR', dirname(__FILE__) . '/wp-content');
 if (IS_DEVELOPMENT) {
 
     //  DB
-    define('DB_NAME', 'testa');
-    define('DB_USER', 'root');
-    define('DB_PASSWORD', '');
+    define('DB_NAME', 'myword');
+    define('DB_USER', 'myword');
+    define('DB_PASSWORD', '0000');
     define('DB_HOST', 'localhost');
 
 } elseif (IS_PREPRODUCTION) {
