@@ -158,20 +158,107 @@
                 'opacity'     : [1, 0] // hack to accelrate opacity speed
               }
             ]
+          } ,*//* {
+            'wrapper' : '.site-header',
+            'duration' : '20%',
+            'animations' :  []
           } ,*/ {
             'wrapper' : '.banner',
-            'duration' : '100%',
+            'duration' : '30%',
             'animations' :  [
               {
                 'selector'    : '.bg-banner1',
-                'translateY'  : '-50%',
-                'rotate'      : -90,
+                'translateY'  : '100%',
               } , {
                 'selector'    : '.bg-banner2',
-                'translateY'  : '-50%',
+                'translateY'  : '-100%',
               }
             ]
-          } ,{
+          } , {
+            'wrapper' : '.carouseltest',
+            'duration' : '100%',
+            'animations' :  [
+              {
+                'selector'    : '.bloc1',
+                'translateY'  : ['175%', '75%'],
+                'translateX'  : ['-30%', '-30%'],
+                'scale'       : [3, '3'],
+                'rotate'  : [-20,  -20]
+              } , {
+                'selector'    : '.bloc2',
+                'translateY'  : ['180%', '80%'],
+                'translateX'  : ['-20%', '-20%'],
+                'rotate'  : [-10,  -10]
+              } , {
+                'selector'    : '.bloc3',
+                'translateY'  : ['175%', '75%'],
+                'translateX'  : ['30%', '30%'],
+                'scale'       : [3, '3'],
+                'rotate'  : [30,  30]
+              } , {
+                'selector'    : '.bloc4',
+                'translateY'  : ['155%', '55%'],
+                'translateX'  : ['6%', '6%'],
+                'rotate'  : [0,  0]
+              } , {
+                'selector'    : '.bloc5',
+                'translateY'  : ['155%', '55%'],
+                'translateX'  : ['5%', '5%'],
+                'rotate'  : [5,  5]
+              } , {
+                'selector'    : '.bloc6',
+                'translateY'  : ['158%', '58%'],
+                'translateX'  : ['0%', '0'],
+                'rotate'  : [30,  30]
+              }
+            ]
+          } , {
+            'wrapper' : '.carouseltest',
+            'duration' : '100%',
+            'animations' :  []
+          } , {
+            'wrapper' : '.carouseltest',
+            'duration' : '100%',
+            'animations' :  [
+              {
+                'selector'    : '.bloc1',
+                'translateY'  : ['75%', '0'],
+                'translateX'  : ['-30%', '0'],
+                'scale'       : [3, '1'],
+                'rotate'  : [-20,  0]
+              } , {
+                'selector'    : '.bloc2',
+                'translateY'  : ['80%', '0'],
+                'translateX'  : ['-20%', '0'],
+                'rotate'  : [-10,  0]
+              } , {
+                'selector'    : '.bloc3',
+                'translateY'  : ['75%', '0'],
+                'translateX'  : ['30%', '0'],
+                'scale'       : [3, '1'],
+                'rotate'  : [30,  0]
+              } , {
+                'selector'    : '.bloc4',
+                'translateY'  : ['62%', '0'],
+                'translateX'  : ['6%', '0'],
+                'rotate'  : [0,  0]
+              } , {
+                'selector'    : '.bloc5',
+                'translateY'  : ['60%', '0'],
+                'translateX'  : ['5%', '0'],
+                'rotate'  : [5,  0]
+              } , {
+                'selector'    : '.bloc6',
+                'translateY'  : ['58%', '0'],
+                'translateX'  : ['0%', '0'],
+                'rotate'  : [30,  0]
+              } , 
+            ]
+          },{
+            'wrapper' : '.carouseltest',
+            'duration' : '150%',
+            'animations' :  []
+          },  /*{
             'wrapper' : '#images',
             'duration' : '150%',
             'animations' :  [
@@ -251,7 +338,7 @@
                 'scale'       : [1, 1]
               }
             ]
-          } , /*{
+          } , */{
             'wrapper' : '#links',
             'duration' : '100%',
             'animations' :  [
@@ -267,7 +354,7 @@
           } , {
             'duration' : '100%',
             'animations' :  []
-          }*/
+          }
         ]
 
     /*  Construction
@@ -434,6 +521,7 @@
         $(currentWrapper).hide();
         $(keyframes[currentKeyframe].wrapper).show();
         currentWrapper = keyframes[currentKeyframe].wrapper;
+                window.console.log(currentWrapper);
       }
     }
 

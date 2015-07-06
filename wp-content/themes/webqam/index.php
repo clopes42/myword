@@ -1,11 +1,11 @@
 <?php get_header(); ?>
 
 
-test
 <div id="main-content" class="main-content">
 
     
-    <section class=" banner banner1">
+    
+    <section class="banner banner1">
         <div class="bg-banner1"></div>
     </section>
     
@@ -41,6 +41,17 @@ test
     </section>
     
     
+    <section class="carouseltest">
+        <div class="bloc bloc1"><img src="http://dummyimage.com/200x200/000/fff" alt=""></div>
+        <div class="bloc bloc2"><img src="http://dummyimage.com/200x200/000/fff" alt=""></div>
+        <div class="bloc bloc3"><img src="http://dummyimage.com/200x200/000/fff" alt=""></div>
+        <div class="bloc bloc4"><img src="http://dummyimage.com/200x200/000/fff" alt=""></div>
+        <div class="bloc bloc5"><img src="http://dummyimage.com/200x200/000/fff" alt=""></div>
+        <div class="bloc bloc6"><img src="http://dummyimage.com/200x200/000/fff" alt=""></div>
+    </section>
+    
+    
+<!--    
     <section id="images" class="wrapper">
       <p class="images-byline">Or better yet, a realistic example of showcasing some design work.</p>
       <p class="images-byline-2">Really, anything is possible &hellip;</p>
@@ -52,7 +63,7 @@ test
           <img id="davegamache-dot-com" class="iphone-content" src="http://davegamache.com/parallax/img/davegamache-rotated.jpg">
         </div>
       </div>
-    </section>
+    </section>-->
     
     
     <section class="secondary">

@@ -3,13 +3,35 @@ body, html,
 .main-content {
     height: 100%;
 }
-
-.banner {
+.main-content {
     position: relative;
-    height: 450px;
+    margin-top: 150px;
     overflow: hidden;
 }
 
+.banner {
+    position: absolute;
+    height: 450px;
+    overflow: hidden;
+    width: 100%;
+}
+
+.banner1 {
+    top: 0;
+    height: 50%;
+}
+.primary {
+    background: #fff;
+    position: relative;
+    top: 42%;
+    height: 16%;
+    z-index: 20;
+    display: none;
+}
+.banner2 {
+    top: 50%;
+    height: 50%;
+}
 .bg-banner1,
 .bg-banner2 {
     position: absolute;
@@ -20,9 +42,10 @@ body, html,
     background-position: center top;
     background-repeat: no-repeat;
 }
+
 .bg-banner1 {
-    top: 0;
     background-image: url(../images/pays1.jpg);
+    bottom: 0;
 }
 
 .bg-banner2 {
@@ -30,8 +53,7 @@ body, html,
     background-image: url(../images/pays2.jpg);
 }
 
-
-
+/*
 #images {
     height: 100%;
     position: fixed;
@@ -100,8 +122,113 @@ body, html,
     position: absolute;
     top: 0;
     width: 100%;
-}
+}*/
 
 p {
     color: #000;
 }
+
+.secondary {
+    height: 2000px;
+}
+.carouseltest {
+    height: 100%;
+    position: fixed;
+    //top: 100%;
+    width: 100%;
+    //display: none;
+}
+.bloc {
+    position: fixed;
+    height: auto;
+    width: 12%;
+    
+    img {
+        width: 100%;
+        height: auto;
+        display: block;
+    }
+}
+.bloc1 {
+    background: blue;
+    left: 30%;
+    top: 50px;
+}
+.bloc2 {
+    background: red;
+    left: 43%;
+    top: 50px;
+}
+.bloc3 {
+    background: yellow;
+    left: 56%;
+    top: 50px;
+}
+.bloc4 {
+    background: green;
+    left: 30%;
+    top: 270px;
+}
+.bloc5 {
+    background: violet;
+    left: 43%;
+    top: 270px;
+}
+.bloc6 {
+    background: brown;
+    left: 56%;
+    top: 270px;
+}
+/*
+.bloc1 {
+    position: absolute;
+    bottom: -300px;
+    left: 0;
+    height: 600px;
+    width: 600px;
+    background: red;
+    
+    @include rotate(-20deg);
+}
+.bloc2 {
+    position: absolute;
+    bottom: -100px;
+    left: 0;
+    background: blue;
+    
+    @include rotate(-10deg);
+}
+
+.bloc3 {
+    position: absolute;
+    bottom: -300px;
+    left: 0;
+    height: 600px;
+    width: 600px;
+    background: yellow;
+    
+    @include rotate(5deg);
+}
+
+.bloc4 {
+    position: absolute;
+    bottom: -100px;
+    left: 0;
+    background: green;
+}
+.bloc5 {
+    position: absolute;
+    bottom: -100px;
+    left: 0;
+    background: violet;
+    
+    @include rotate(40deg);
+}
+.bloc6 {
+    position: absolute;
+    bottom: -100px;
+    left: 0;
+    background: orange;
+    
+    @include rotate(-40deg);
+}*/

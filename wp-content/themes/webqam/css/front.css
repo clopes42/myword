@@ -56,6 +56,15 @@
   visibility: hidden;
 }
 
+/* line 1, ../sass/layout/_header.scss */
+.site-header {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 150px;
+  overflow: hidden;
+}
+
 /* line 1, ../sass/layout/_main.scss */
 body, html,
 #page,
@@ -63,14 +72,44 @@ body, html,
   height: 100%;
 }
 
-/* line 7, ../sass/layout/_main.scss */
-.banner {
+/* line 6, ../sass/layout/_main.scss */
+.main-content {
   position: relative;
-  height: 450px;
+  margin-top: 150px;
   overflow: hidden;
 }
 
-/* line 13, ../sass/layout/_main.scss */
+/* line 12, ../sass/layout/_main.scss */
+.banner {
+  position: absolute;
+  height: 450px;
+  overflow: hidden;
+  width: 100%;
+}
+
+/* line 19, ../sass/layout/_main.scss */
+.banner1 {
+  top: 0;
+  height: 50%;
+}
+
+/* line 23, ../sass/layout/_main.scss */
+.primary {
+  background: #fff;
+  position: relative;
+  top: 42%;
+  height: 16%;
+  z-index: 20;
+  display: none;
+}
+
+/* line 31, ../sass/layout/_main.scss */
+.banner2 {
+  top: 50%;
+  height: 50%;
+}
+
+/* line 35, ../sass/layout/_main.scss */
 .bg-banner1,
 .bg-banner2 {
   position: absolute;
@@ -82,109 +121,213 @@ body, html,
   background-repeat: no-repeat;
 }
 
-/* line 23, ../sass/layout/_main.scss */
+/* line 46, ../sass/layout/_main.scss */
 .bg-banner1 {
-  top: 0;
   background-image: url(../images/pays1.jpg);
+  bottom: 0;
 }
 
-/* line 28, ../sass/layout/_main.scss */
+/* line 51, ../sass/layout/_main.scss */
 .bg-banner2 {
   top: 0;
   background-image: url(../images/pays2.jpg);
 }
 
-/* line 35, ../sass/layout/_main.scss */
+/*
 #images {
-  height: 100%;
-  position: fixed;
-  top: 100%;
-  width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 100%;
+    width: 100%;
 }
-
-/* line 41, ../sass/layout/_main.scss */
 .images-byline {
-  color: black;
-  left: 10%;
-  max-width: 22%;
-  opacity: 0;
-  position: fixed;
-  top: 63%;
+    color: black;
+    left: 10%;
+    max-width: 22%;
+    opacity: 0;
+    position: fixed;
+    top: 63%;
 }
-
-/* line 49, ../sass/layout/_main.scss */
 .images-byline-2 {
-  color: black;
-  left: 25%;
-  opacity: 0;
-  position: fixed;
-  text-align: center;
-  top: 93%;
-  width: 50%;
+    color: black;
+    left: 25%;
+    opacity: 0;
+    position: fixed;
+    text-align: center;
+    top: 93%;
+    width: 50%;
 }
-
-/* line 58, ../sass/layout/_main.scss */
 #mediumHomepage {
-  right: 5%;
-  top: 100%;
+    right: 5%;
+    top: 100%;
 }
-
-/* line 62, ../sass/layout/_main.scss */
 .raw-page {
-  background-clip: padding-box;
-  border: 1px solid rgba(0, 0, 0, 0.2);
-  border-radius: 6px;
-  box-shadow: 0 0 1px rgba(255, 255, 255, 0.3) inset;
-  position: fixed;
-  width: 45%;
+    background-clip: padding-box;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    border-radius: 6px;
+    box-shadow: 0 0 1px rgba(255, 255, 255, 0.3) inset;
+    position: fixed;
+    width: 45%;
 }
-
-/* line 70, ../sass/layout/_main.scss */
 .iphone {
-  position: fixed;
-  right: 40%;
-  top: 102%;
-  width: 16%;
+    position: fixed;
+    right: 40%;
+    top: 102%;
+    width: 16%;
 }
 
-/* line 77, ../sass/layout/_main.scss */
 .iphone-frame {
-  background-size: 100% auto;
-  height: auto;
-  position: relative;
-  width: 100%;
-  z-index: 2;
+    background-size: 100% auto;
+    height: auto;
+    position: relative;
+    width: 100%;
+    z-index: 2;
 }
 
-/* line 85, ../sass/layout/_main.scss */
 .iphone-viewport {
-  background-color: #000;
-  height: 69.5%;
-  left: 8%;
-  overflow: hidden;
-  position: absolute;
-  top: 14%;
-  width: 83.5%;
+    background-color: #000;
+    height: 69.5%;
+    left: 8%;
+    overflow: hidden;
+    position: absolute;
+    top: 14%;
+    width: 83.5%;
 }
 
-/* line 95, ../sass/layout/_main.scss */
 #medium-profile-iphone {
-  z-index: 2;
+    z-index: 2;
 }
-
-/* line 98, ../sass/layout/_main.scss */
 .iphone-content {
-  left: 0;
-  position: absolute;
-  top: 0;
-  width: 100%;
-}
-
-/* line 105, ../sass/layout/_main.scss */
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
+}*/
+/* line 127, ../sass/layout/_main.scss */
 p {
   color: #000;
 }
 
+/* line 131, ../sass/layout/_main.scss */
+.secondary {
+  height: 2000px;
+}
+
+/* line 134, ../sass/layout/_main.scss */
+.carouseltest {
+  height: 100%;
+  position: fixed;
+  width: 100%;
+}
+
+/* line 141, ../sass/layout/_main.scss */
+.bloc {
+  position: fixed;
+  height: auto;
+  width: 12%;
+}
+/* line 146, ../sass/layout/_main.scss */
+.bloc img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* line 152, ../sass/layout/_main.scss */
+.bloc1 {
+  background: blue;
+  left: 30%;
+  top: 50px;
+}
+
+/* line 157, ../sass/layout/_main.scss */
+.bloc2 {
+  background: red;
+  left: 43%;
+  top: 50px;
+}
+
+/* line 162, ../sass/layout/_main.scss */
+.bloc3 {
+  background: yellow;
+  left: 56%;
+  top: 50px;
+}
+
+/* line 167, ../sass/layout/_main.scss */
+.bloc4 {
+  background: green;
+  left: 30%;
+  top: 270px;
+}
+
+/* line 172, ../sass/layout/_main.scss */
+.bloc5 {
+  background: violet;
+  left: 43%;
+  top: 270px;
+}
+
+/* line 177, ../sass/layout/_main.scss */
+.bloc6 {
+  background: brown;
+  left: 56%;
+  top: 270px;
+}
+
+/*
+.bloc1 {
+    position: absolute;
+    bottom: -300px;
+    left: 0;
+    height: 600px;
+    width: 600px;
+    background: red;
+    
+    @include rotate(-20deg);
+}
+.bloc2 {
+    position: absolute;
+    bottom: -100px;
+    left: 0;
+    background: blue;
+    
+    @include rotate(-10deg);
+}
+
+.bloc3 {
+    position: absolute;
+    bottom: -300px;
+    left: 0;
+    height: 600px;
+    width: 600px;
+    background: yellow;
+    
+    @include rotate(5deg);
+}
+
+.bloc4 {
+    position: absolute;
+    bottom: -100px;
+    left: 0;
+    background: green;
+}
+.bloc5 {
+    position: absolute;
+    bottom: -100px;
+    left: 0;
+    background: violet;
+    
+    @include rotate(40deg);
+}
+.bloc6 {
+    position: absolute;
+    bottom: -100px;
+    left: 0;
+    background: orange;
+    
+    @include rotate(-40deg);
+}*/
 /*! normalize.css v1.1.3 | MIT License | git.io/normalize */
 /* ==========================================================================
    HTML5 display definitions
