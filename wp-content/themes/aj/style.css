@@ -1,0 +1,26 @@
+/*
+Theme Name: AJ
+Version: 1.0.0
+Description: testing Angular JS
+*/
+
+body {
+	background: #fafafa;
+	font-family: sans-serif;
+}
+.col-width {
+	max-width: 680px;
+	padding: 0 1.5em;
+	margin: 3em auto;
+}
+header {
+	display:block;
+	margin-bottom: 3em;
+	text-align: center;
+}
+article {
+	display:block;
+	background: #fff;
+	padding: 1.5em;
+	margin-bottom: 1.5em;
+}
