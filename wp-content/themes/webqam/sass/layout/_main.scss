@@ -5,7 +5,7 @@ body, html,
 }
 .main-content {
     position: relative;
-    margin-top: 150px;
+   // margin-top: 150px;
     overflow: hidden;
 }
 
@@ -135,13 +135,15 @@ p {
     height: 100%;
     position: fixed;
     //top: 100%;
-    width: 100%;
-    //display: none;
+    width: 38%;
+    left: 31%;
+    display: none;
 }
 .bloc {
-    position: fixed;
-    height: auto;
-    width: 12%;
+   //position: fixed;
+   float: left; 
+   height: auto;
+    width: 33%;
     
     img {
         width: 100%;
@@ -151,33 +153,40 @@ p {
 }
 .bloc1 {
     background: blue;
-    left: 30%;
-    top: 50px;
+/*    left: 30%;
+    top: 50px;*/
+    margin-right: 0.5%;
+    margin-bottom: 0.5%;
 }
 .bloc2 {
     background: red;
-    left: 43%;
-    top: 50px;
+/*    left: 43%;
+    top: 50px;*/
+    margin-right: 0.5%;
+    margin-bottom: 0.5%;
 }
 .bloc3 {
     background: yellow;
-    left: 56%;
-    top: 50px;
+/*    left: 56%;
+    top: 50px;*/
+    margin-bottom: 0.5%;
 }
 .bloc4 {
     background: green;
-    left: 30%;
-    top: 270px;
+/*    left: 30%;
+    top: 270px;*/
+    margin-right: 0.5%;
 }
 .bloc5 {
     background: violet;
-    left: 43%;
-    top: 270px;
+/*    left: 43%;
+    top: 270px;*/
+    margin-right: 0.5%;
 }
 .bloc6 {
     background: brown;
-    left: 56%;
-    top: 270px;
+/*    left: 56%;
+    top: 270px;*/
 }
 /*
 .bloc1 {

@@ -16,4 +16,6 @@ $(document).ready(function(){
     var g = new Webqam.General();
     g.init();
 
+
+    jQuery.scrollSpeed(150, 800);
 });

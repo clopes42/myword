@@ -338,7 +338,7 @@
                 'scale'       : [1, 1]
               }
             ]
-          } , */{
+          } , *//*{
             'wrapper' : '#links',
             'duration' : '100%',
             'animations' :  [
@@ -354,7 +354,7 @@
           } , {
             'duration' : '100%',
             'animations' :  []
-          }
+          }*/
         ]
 
     /*  Construction
