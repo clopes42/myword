@@ -11,6 +11,12 @@
             <header>
                 <h1>TEST</h1>
                 <p>Display a list of recent posts.</p>
+
+                <nav class="site-navigation primary-navigation" role="navigation">
+                    <?php wp_nav_menu(array(
+                        'theme_location' => 'main-nav',
+                        'menu_class' => 'nav-menu')); ?>
+                </nav>
             </header>
 
             <div ng-view></div>
@@ -19,7 +25,7 @@
                 &copy; <?php echo date('Y'); ?>
             </footer>
 
-            <?php wp_footer(); ?>
+<?php wp_footer(); ?>
         </div>
     </body>
 </html>

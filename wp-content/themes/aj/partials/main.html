@@ -1,9 +1,4 @@
 <div class="col-width">
-
-
-    <my-search-form></my-search-form>
-
-
     <h2>Catégories</h2>
     <ul>
         <li ng-repeat="category in categories ">
@@ -11,12 +6,4 @@
         </li>
     </ul>
     <p>{{page.title}}</p>
-
-
-    <article data-ng-repeat="post in posts">
-        <h3><a href="{{ post.slug}}">{{ post.title}}</a></h3>
-        <div data-ng-bind-html="post.excerpt"></div>
-
-    </article>
-
 </div>

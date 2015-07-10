@@ -12,6 +12,10 @@ myapp.config(function($routeProvider, $locationProvider) {
                 templateUrl: aeJS.partials + 'blog.html',
                 controller: 'blog'
             })
+            .when('/portfolio', {
+                templateUrl: aeJS.partials + 'portfolio.html',
+                controller: 'portfolio'
+            })
             .when('/:slug', {
                 templateUrl: aeJS.partials + 'content.html',
                 controller: 'content'
@@ -130,21 +134,42 @@ myapp.controller('category', ['$scope', '$http', '$routeParams', function($scope
     }]);
 
 
-myapp.directive('mySearchForm', function() {
+myapp.controller('portfolio', ['$scope', '$http', function($scope, $http) {
+        $http({
+            method: 'GET',
+            url: $scope.api + '/posts',
+            params: {
+                'filter[post_per_page]': -1,
+                'type[]': 'type-portfolio',
+            },
+        }).
+                success(function(data, status, headers, config) {
+                    $scope.posts = data;
+                }).
+                error(function(data, status, headers, config) {
+                });
+    }]);
+
+
+myapp.directive('mySearchForm', [ '$location', function($location) {
     return {
         restrict: 'EA',
         template: 'Recherche : <input type="text" name="s" ng-model="filter.s" ng-change="search()">',
         controller: function($scope, $http) {
             $scope.filter = {
-                s: ''
+                s: '',
+                type: 'post',
             };
+            if($location.$$path == '/portfolio'){
+                $scope.filter.type = 'type-portfolio';
+            }            
             $scope.search = function() {
                 $http({
                     method: 'GET',
                     url: $scope.api + '/posts',
                     params: {
                         'filter[s]': $scope.filter.s,
-                        'type[]': 'page',
+                        'type[]': $scope.filter.type,
                     },
                 }).
                         success(function(data, status, headers, config) {
@@ -155,4 +180,4 @@ myapp.directive('mySearchForm', function() {
             }
         }
     };
-});
+}]);
